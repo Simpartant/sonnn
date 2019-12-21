@@ -1,0 +1,65 @@
+
+      
+<div ba-panel ba-panel-class="with-scroll" >
+  <div class="col-sm-9" style="text-align: right;">
+  <div class="form-horizontal" style="text-align: center !important;">
+<div class="widgets" >
+<div class="row" class ="datepicker row" >
+ 
+  <div class = "col-sm-2" style ="text-align: right">
+    <label for="inputFromDate" class="control-label" >Từ ngày</label>
+  </div>
+    <div class="col-sm-3" ng-controller="datepickerpopupCtrl">
+      <p class="input-group">
+          <input type="text" 
+          class="form-control" 
+          uib-datepicker-popup="dd/MM/yyyy" 
+          datepicker-options="options" 
+          ng-model="dt" is-open="opened" 
+          ng-required="true" 
+          close-text="Close" 
+          alt-input-formats="altInputFormats" 
+          show-button-bar="false" />
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+      </p>
+    </div>
+
+    <div class = "col-sm-2" style ="text-align: right">
+      <label for="inputFromDate" class="control-label">Đến ngày</label>
+    </div>
+    <div class="col-sm-3" ng-controller="datepickerpopupCtrl">
+      <p class="input-group">
+          <input type="text" 
+          class="form-control" 
+          uib-datepicker-popup="dd/MM/yyyy"  
+          datepicker-options="options" 
+          ng-model="dt" is-open="opened" 
+          ng-required="true" 
+          close-text="Close" 
+          alt-input-formats="altInputFormats" 
+          show-button-bar="false" />
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+      </p>
+    </div>
+</div>
+<div class = "col-sm-2" style ="text-align: right">
+  <label for="inputFromDate" class="control-label">Last Name</label>
+</div>
+   <div class="col-sm-3">
+    <div class="form-group">
+      <label for="inputLastName"></label>
+      <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+    </div>
+  </div>
+  
+  
+</div>
+</div>
+
+
+
+
