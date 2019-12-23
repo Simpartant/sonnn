@@ -1,65 +1,168 @@
-
-      
-<div ba-panel ba-panel-class="with-scroll" >
-  <div class="col-sm-9" style="text-align: right;">
-  <div class="form-horizontal" style="text-align: center !important;">
-<div class="widgets" >
-<div class="row" class ="datepicker row" >
- 
-  <div class = "col-sm-2" style ="text-align: right">
-    <label for="inputFromDate" class="control-label" >Từ ngày</label>
-  </div>
-    <div class="col-sm-3" ng-controller="datepickerpopupCtrl">
-      <p class="input-group">
-          <input type="text" 
-          class="form-control" 
-          uib-datepicker-popup="dd/MM/yyyy" 
-          datepicker-options="options" 
-          ng-model="dt" is-open="opened" 
-          ng-required="true" 
-          close-text="Close" 
-          alt-input-formats="altInputFormats" 
-          show-button-bar="false" />
-        <span class="input-group-btn">
-          <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
-        </span>
-      </p>
+<!-- Roll Pages -->
+<!-- <div class="widgets"> -->
+  <div ba-panel ba-panel-class="with-scroll" ba-panel-title="Tạo cuộc họp">
+    <div ng-include="'app.pages/form/layouts/widgets/blockForm.html'"></div>
+    <!--  -->
+    <form>
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="inputNumberDocumentary">Chủ đề</label>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="inputNumberDocumentary"
+              placeholder="Cuộc họp về..."
+            />
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <div
+            class="col-xlg-6 col-md-6 col-sm-6"
+            ng-controller="datepickerpopupCtrl"
+          >
+          <label><b>Ngày họp</b></label>
+            <p class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                uib-datepicker-popup="dd/MM/yyyy"
+                datepicker-options="options"
+                ng-model="dt"
+                is-open="opened"
+                ng-required="true"
+                close-text="close"
+                alt-input-formats="altInputFormats"
+                show-button-bar="false"
+                placeholder="Nhập hoặc Chọn Ngày tạo cuộc họp"
+              />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open()">
+                  <i class="glyphicon glyphicon-calendar"></i>
+                </button>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- -->
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputContentDocumentary"><b>Nội dung cuộc họp</b></label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputContentDocumentary"
+              placeholder="Tóm tắt nội dung quan trọng"
+            />
+          </div>
+        </div>
+    
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputWhoMakeDocumentary"><b>Người tạo</b></label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputWhoMakeDocumentary"
+              placeholder="Tên người tạo cuộc họp"
+            />
+          </div>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputReciver"><b>Đơn vị nhận </b></label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputReciver"
+              placeholder="Bộ phận/ chức vụ"
+            />
+          </div>
+        </div>
+    
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputAddressReciver"><b>Địa Chỉ</b></label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputAddressReciver"
+              placeholder="Địa Chỉ Đơn Vị Nhận"
+            />
+          </div>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputSignature"><b>Người kiểm duyệt</b></label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputSignature"
+              placeholder="Tên Người Kiểm Duyệt"
+            />
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <div
+            class="col-xlg-6 col-md-6 col-sm-6"
+            ng-controller="datepickerpopupCtrl"
+          >
+            <label><b>Ngày Duyệt</b></label>
+            <p class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                uib-datepicker-popup="dd/MM/yyyy"
+                datepicker-options="options"
+                ng-model="dt"
+                is-open="opened"
+                ng-required="true"
+                close-text="close"
+                alt-input-formats="altInputFormats"
+                show-button-bar="false"
+                placeholder="Nhập Ngày Duyệt"
+              />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open()">
+                  <i class="glyphicon glyphicon-calendar"></i>
+                </button>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label for="inputNote"><b>Ghi chú</b></label>
+            <textarea placeholder="Nhập..." class="form-control" id="inputNote"></textarea>
+          </div>
+          </div>
+        </div>
+        <button type="submit" value="Reset" class="btn btn-success">Nhập</button>
+        <!-- <buttont type="reset" value="Reset" class="btn btn-default">Reset</buttont> -->
+        <button class="btn btn-info" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+      </div>
     </div>
-
-    <div class = "col-sm-2" style ="text-align: right">
-      <label for="inputFromDate" class="control-label">Đến ngày</label>
-    </div>
-    <div class="col-sm-3" ng-controller="datepickerpopupCtrl">
-      <p class="input-group">
-          <input type="text" 
-          class="form-control" 
-          uib-datepicker-popup="dd/MM/yyyy"  
-          datepicker-options="options" 
-          ng-model="dt" is-open="opened" 
-          ng-required="true" 
-          close-text="Close" 
-          alt-input-formats="altInputFormats" 
-          show-button-bar="false" />
-        <span class="input-group-btn">
-          <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
-        </span>
-      </p>
-    </div>
-</div>
-<div class = "col-sm-2" style ="text-align: right">
-  <label for="inputFromDate" class="control-label">Last Name</label>
-</div>
-   <div class="col-sm-3">
-    <div class="form-group">
-      <label for="inputLastName"></label>
-      <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
-    </div>
-  </div>
+    </form>
   
   
-</div>
-</div>
-
-
-
-
+  <style>
+    / Chrome, Safari, Edge, Opera /
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
