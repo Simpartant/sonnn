@@ -10,9 +10,9 @@
         .state('meeting', {
           url: '/meeting',
           templateUrl: 'app/pages/meeting/meeting.html',
-          title: 'Cuộc Họp',
+          title: 'Tạo cuộc họp',
           sidebarMeta: {
-            icon: 'ion-battery-low',
+            icon: 'ion-ios-briefcase',
             order: 0,
           },
         });

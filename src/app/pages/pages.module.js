@@ -14,8 +14,9 @@
     // // 'BlurAdmin.pages.maps',
     // // 'BlurAdmin.pages.profile',
     // // 'BlurAdmin.pages.category',
-    'BlurAdmin.pages.infoprofile',
+    // 'BlurAdmin.pages.infoprofile',
     // // 'BlurAdmin.pages.createForm',
+    'BlurAdmin.pages.search',
     'BlurAdmin.pages.meeting'
     
   ])
@@ -23,7 +24,7 @@
 
   /** @ngInject */
   function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
-    $urlRouterProvider.otherwise('infoprofile');
+    $urlRouterProvider.otherwise('search');
 
     // baSidebarServiceProvider.addStaticItem({
     //   title: 'Pages',
