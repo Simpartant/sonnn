@@ -1,6 +1,6 @@
 <!-- Roll Pages -->
 <!-- <div class="widgets"> -->
-  <div ba-panel ba-panel-class="with-scroll" ba-panel-title="Tạo cuộc họp">
+  <div ba-panel ba-panel-class="with-scroll" ba-panel-title="">
     <div ng-include="'app.pages/form/layouts/widgets/blockForm.html'"></div>
     <!--  -->
     <form>
@@ -77,12 +77,11 @@
       <div class="col-sm-6">
         <div class="form-group">
           <label for="inputPTake"><b>Đơn vị nhận</b></label>
-            <select class="form-control" title="Select with Divider" selectpicker>
-                <option>Group 1 - Option 1</option>
-                <option>Group 1 - Option 2</option>
-                <option data-divider="true"></option>
-                <option>Group 2 - Option 1</option>
-                <option>Group 2 - Option 2</option>
+            <select class="form-control" title="Chọn đơn vị nhận" selectpicker>
+              <option>VietInfo Corp</option>
+              <option>Công ty trách nhiệm hữu hạn</option>
+              <option>Tâp đoàn VinGroup</option>
+                
             </select>
         </div>
     </div>
@@ -90,12 +89,13 @@
     <div class="col-sm-6">
       <div class="form-group">
         <label for="inputPTakeRoom"><b>Phòng ban</b></label>
-          <select class="form-control" title="Select with Divider" selectpicker>
-              <option>Group 1 - Option 1</option>
-              <option>Group 1 - Option 2</option>
-              <option data-divider="true"></option>
-              <option>Group 2 - Option 1</option>
-              <option>Group 2 - Option 2</option>
+          <select class="form-control" title="Chọn phòng ban" selectpicker>
+            <option>Chủ tịch</option>
+            <option>Giám đốc</option>
+            <option>Phòng kinh doanh</option>
+            <option>Phòng sales</option>
+            <option>Phòng kế toán</option>
+            <option>Phòng nhân sự</option>
           </select>
       </div>
   </div>
@@ -191,7 +191,8 @@
         <button type="submit" value="Reset" class="btn btn-success" >Nhập </button>
         
         <!-- <buttont type="reset" value="Reset" class="btn btn-default">Reset</buttont> -->
-        <button class="btn btn-infor" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+        <button class="btn btn-default" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+        <button onclick="window.location.href = '#/search';" type="button" class="btn btn-danger"><i class="ion-arrow"></i> Trở về</button>
        
 
 

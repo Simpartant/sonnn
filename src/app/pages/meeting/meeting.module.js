@@ -11,11 +11,13 @@
           url: '/meeting',
           templateUrl: 'app/pages/meeting/meeting.html',
           title: 'Tạo cuộc họp',
-          sidebarMeta: {
-            icon: 'ion-ios-briefcase',
-            order: 0,
+          // sidebarMeta: {
+          //   icon: 'ion-ios-briefcase',
+          //   order: 0,
           },
-        });
+        // }
+        );
+        
   }
 
 })();
