@@ -73,12 +73,27 @@
 
           
 
-          <div class="horizontal-scroll">
-            <table class="table table-condensed">
-              <thead>
-              <tr>
-                <th class="table-id">#</th>
-                <th>Tên cuộc họp</th>
+          <div class="horizontal-scroll" >
+            <div class="form-group select-page-size-wrap ">
+              <label>Số dòng hiển thị
+                  <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
+                          ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+                  </select>
+              </label>
+          </div>
+          <table st-table="displayedCollection" st-safe-src="mainCtrl.rowCollection" class="table table-striped" ng-controller="connectedDecoders as vm">
+            <thead>
+              <tr class="sortable">
+                <td style="text-align: center;">#</td>
+                        <td>
+                            <div>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" id="inputCheckAll" ng-model="inputCheckAll">
+                                    <span>&nbsp;</span>
+                                </label>
+                            </div>
+                        </td>
+                <th class="text-center">Tên cuộc họp</th>
                 <th>Ngày họp</th>
                 <th>Giờ họp</th>
                 <th>Địa điểm</th>
@@ -99,6 +114,12 @@
           </div>
         </div >
         
+
+
+
+        
+
+
         </form>
         
     </div>

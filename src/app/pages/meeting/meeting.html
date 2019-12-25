@@ -7,15 +7,21 @@
     <div>
       <div class="row">
         <div class="col-sm-6">
-          <label for="inputTtile">Chủ đề</label>
           <div class="form-group">
+            <label for="title"><b>Chủ đề *</b></label>
             <input
               type="text"
               class="form-control"
-              id="inputNumberDocumentary"
+              id="title"
+              name ="title"
               placeholder="Cuộc họp về..."
-            />
+              data-required-message="Required field" required
+              data-message-container="inputtitleError"
+              minlength="10"
+              />
+
           </div>
+      
         </div>
     
         <div class="form-group">
@@ -36,7 +42,7 @@
                 close-text="close"
                 alt-input-formats="altInputFormats"
                 show-button-bar="false"
-                placeholder="Nhập hoặc Chọn Ngày tạo cuộc họp"
+                placeholder="Nhập hoặc Chọn Ngày tạo cuộc họp" 
               />
               <span class="input-group-btn">
                 <button type="button" class="btn btn-default" ng-click="open()">
@@ -57,6 +63,9 @@
               class="form-control"
               id="inputContentDocumentary"
               placeholder="Tóm tắt nội dung quan trọng"
+              data-required-message="Required field" required
+              data-message-container="inputtitleError"
+              minlength="10"
             />
           </div>
         </div>
@@ -69,6 +78,9 @@
               class="form-control"
               id="inputWhoMakeDocumentary"
               placeholder="Tên người tạo cuộc họp"
+              data-required-message="Required field" required
+              data-message-container="inputtitleError"
+              minlength="10"
             />
           </div>
         </div>
@@ -77,7 +89,7 @@
       <div class="col-sm-6">
         <div class="form-group">
           <label for="inputPTake"><b>Đơn vị nhận</b></label>
-            <select class="form-control" title="Chọn đơn vị nhận" selectpicker>
+            <select class="form-control" title="Chọn đơn vị nhận" selectpicker required>
               <option>VietInfo Corp</option>
               <option>Công ty trách nhiệm hữu hạn</option>
               <option>Tâp đoàn VinGroup</option>
@@ -88,8 +100,8 @@
 
     <div class="col-sm-6">
       <div class="form-group">
-        <label for="inputPTakeRoom"><b>Phòng ban</b></label>
-          <select class="form-control" title="Chọn phòng ban" selectpicker>
+        <label type="text" for="inputPTakeRoom"><b>Phòng ban</b></label>
+          <select class="form-control" title="Chọn phòng ban" selectpicker required>
             <option>Chủ tịch</option>
             <option>Giám đốc</option>
             <option>Phòng kinh doanh</option>
@@ -112,6 +124,9 @@
               class="form-control"
               id="inputAddressReciver"
               placeholder="Địa Chỉ Đơn Vị Nhận"
+              data-required-message="Required field" required
+              data-message-container="inputtitleError"
+              minlength="10"
             />
           </div>
         </div>
@@ -125,6 +140,9 @@
               class="form-control"
               id="inputSignature"
               placeholder="Tên Người Kiểm Duyệt"
+              data-required-message="Required field" required
+              data-message-container="inputtitleError"
+              minlength="10"
             />
           </div>
         </div>
@@ -134,7 +152,7 @@
           <div class="col-sm-6">
             <div class="form-group">
                 <label for="fileupload"><b>Chọn tài liệu đính kèm</b></label>
-                <input type="file" class="form-control" [(ngModel)]="model.fileupload">
+                <input type="file" class="form-control" [(ngModel)]="model.fileupload" required>
             </div>
           </div>  
           <div class="form-group">
@@ -227,3 +245,5 @@ margin-right: 100%
 
     
   </style>
+
+  
