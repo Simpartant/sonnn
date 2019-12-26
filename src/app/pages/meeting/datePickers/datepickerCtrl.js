@@ -15,6 +15,19 @@
         $scope.options = {
             showWeeks: false
         };
-
+        
+       ;
+      function DatepickerDemoCtrl($scope) {
+        vm = this;
+        vm.today = function() {
+          if (vm.today) {
+            vm.day = new Date();
+          }
+        };
+        vm.options = {
+          minDate: new Date(),
+          showWeeks: true
+        };
+      }
     }
 })();

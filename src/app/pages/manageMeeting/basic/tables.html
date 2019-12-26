@@ -1,0 +1,91 @@
+
+        <div class="row">
+            <div class="col-md-12"
+                 ba-panel
+                 ba-panel-class="with-scroll">
+           
+
+
+
+        <div class="row">
+            <div class="col-xlg-6 col-md-12 col-sm-6" ng-controller="OldSelectpickerPanelCtrl as selectpickerVm">
+              <div class="form-group">
+                <label><b>Chủ đề cuộc họp</b></label>
+                  <select class="form-control selectpicker" selectpicker title="Chọn chủ đề"
+                          ng-model="selectpickerVm.standardSelected"                           
+                          ng-options="item as item.label for item in selectpickerVm.standardSelectItems">
+                  </select>
+              </div>
+        </div> 
+
+    
+  
+      <div class="form-group">
+        <div
+          class="col-xlg-6 col-md-12 col-sm-6"
+          ng-controller="datepickerpopupCtrl"
+        >
+        <label><b>Ngày họp</b></label>
+          <p class="input-group">
+            <input
+             locale="vi"
+              type="text"
+              id="dateMeet"
+              class="form-control"
+              uib-datepicker-popup="dd/MM/yyyy"
+              datepicker-options="options"
+              ng-model="dt"
+              is-open="opened"
+              ng-required="true"
+              close-text="close"
+              alt-input-formats="altInputFormats"
+              show-button-bar="false"
+              placeholder="01/01/2001" 
+              type="button" class="btn btn-default" ng-click="open()"
+              date-disabled="disabled(date, mode)"
+            />
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="open()">
+                <i class="glyphicon glyphicon-calendar"></i>
+              </button>
+            </span>
+          </p>
+        </div>
+        <div style="text-align:center;">
+          <button type="button" class="btn btn-primary"><i class="ion-search"></i> Tìm kiếm</button>
+
+        <button onclick="window.location.href = '#/meeting';" type="button" class="btn btn-success"><i class="ion-plus"></i> Lập mới </button>
+      </div>
+
+ 
+  <div class="row">
+    <div class="col-md-12">
+        <div include-with-scope="app/pages/manageMeeting/widgets/condensedTable.html"></div>
+      </div>
+    </div>
+
+
+</div>
+
+
+<style>
+    / Chrome, Safari, Edge, Opera /
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .center{
+      width: 40%;
+margin-left: 30%;
+margin-right: 30%
+    }
+    .right{
+      width: 40%;
+margin-left: 0%;
+margin-right: 100%
+    }
+    
+
+    
+  </style>

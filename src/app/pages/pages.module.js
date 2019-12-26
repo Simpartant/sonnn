@@ -16,7 +16,7 @@
     // // 'BlurAdmin.pages.category',
     // 'BlurAdmin.pages.infoprofile',
     // // 'BlurAdmin.pages.createForm',
-    'BlurAdmin.pages.search',
+    'BlurAdmin.pages.manageMeeting',
     'BlurAdmin.pages.meeting'
     
   ])
@@ -24,7 +24,7 @@
 
   /** @ngInject */
   function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
-    $urlRouterProvider.otherwise('search');
+    $urlRouterProvider.otherwise('manageMeeting');
 
     // baSidebarServiceProvider.addStaticItem({
     //   title: 'Pages',

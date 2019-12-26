@@ -3,36 +3,41 @@
   <div ba-panel ba-panel-class="with-scroll" ba-panel-title="">
     <div ng-include="'app.pages/form/layouts/widgets/blockForm.html'"></div>
     <!--  -->
-    <form>
+    <label>
     <div>
       <div class="row">
-        <div class="col-sm-6">
-          <div class="form-group">
-            <label for="title"><b>Chủ đề *</b></label>
-            <input
-              type="text"
-              class="form-control"
-              id="title"
-              name ="title"
-              placeholder="Cuộc họp về..."
-              data-required-message="Required field" required
-              data-message-container="inputtitleError"
-              minlength="10"
-              />
-
+              <div class="col-sm-3" ng-controller="OldSelectpickerPanelCtrl as selectpickerVm">
+                <div class="form-group">
+                  <label><b>Chủ đề cuộc họp</b></label>
+                    <select class="form-control selectpicker" selectpicker title="Chọn chủ đề"
+                            ng-model="selectpickerVm.standardSelected"                           
+                            ng-options="item as item.label for item in selectpickerVm.standardSelectItems">
+                    </select>
+                </div>
           </div>
+          <div class="col-sm-3" ng-controller="OldSelectpickerPanelCtrl as selectpickerVm">
+            <div class="form-group">
+              <label><b>Phòng</b></label>
+                <select class="form-control selectpicker" selectpicker title="Chọn phòng họp"
+                        ng-model="selectpickerVm.standardSelected"
+                        ng-options="item as item.label for item in selectpickerVm.phonghop">
+                </select>
+            </div>
+      </div>
+        
       
-        </div>
     
         <div class="form-group">
           <div
-            class="col-xlg-6 col-md-6 col-sm-6"
+            class="col-xlg-3 col-md-3 col-sm-3"
             ng-controller="datepickerpopupCtrl"
           >
           <label><b>Ngày họp</b></label>
             <p class="input-group">
               <input
+               locale="vi"
                 type="text"
+                id="dateMeet"
                 class="form-control"
                 uib-datepicker-popup="dd/MM/yyyy"
                 datepicker-options="options"
@@ -42,7 +47,9 @@
                 close-text="close"
                 alt-input-formats="altInputFormats"
                 show-button-bar="false"
-                placeholder="Nhập hoặc Chọn Ngày tạo cuộc họp" 
+                placeholder="01/01/2001" 
+                type="button" class="btn btn-default" ng-click="open()"
+                date-disabled="disabled(date, mode)"
               />
               <span class="input-group-btn">
                 <button type="button" class="btn btn-default" ng-click="open()">
@@ -51,6 +58,58 @@
               </span>
             </p>
           </div>
+
+
+          <div
+          class="col-md-1 "
+          ng-controller="timepickerpopupCtrl"
+        >
+        <label><b>Bắt đầu</b></label>
+          <p class="input-group">
+            <input
+              type="text"
+              id="timeMeetfrom"
+              class="form-control"
+              uib-datepicker-popup="HH:MM"
+              timepicker-desktopSettings="externalSettings"
+              ng-model="dt"
+              is-open="opened"
+              ng-required="true"
+              close-text="close"
+              alt-input-formats="altInputFormats"
+              show-button-bar="false"
+              placeholder="12:00" 
+              type="button" class="btn btn-default" ng-click="open()"
+            />
+          </p>
+        </div>
+
+        <div
+          class="col-md-1 "
+          ng-controller="timepickerpopupCtrl"
+        >
+        <label><b>Kết thúc</b></label>
+          <p class="input-group">
+            <input
+              type="text"
+              id="timeMeetto"
+              class="form-control"
+              uib-datepicker-popup="HH:MM"
+              timepicker-desktopSettings="externalSettings"
+              ng-model="dt"
+              is-open="opened"
+              ng-required="true"
+              close-text="close"
+              alt-input-formats="altInputFormats"
+              show-button-bar="false"
+              placeholder="12:00" 
+              type="button" class="btn btn-default" ng-click="open()"
+            />
+          </p>
+          
+        </div>
+
+
         </div>
       </div>
       <!-- -->
@@ -76,7 +135,7 @@
             <input
               type="text"
               class="form-control"
-              id="inputWhoMakeDocumentary"
+              id=""
               placeholder="Tên người tạo cuộc họp"
               data-required-message="Required field" required
               data-message-container="inputtitleError"
@@ -85,32 +144,67 @@
           </div>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputContent"><b>Chủ trì cuộc họp</b></label>
+            <input
+              type="text"
+              class="form-control"
+              id=""
+              placeholder="THọ tên chủ trì (ông/bà)"
+              data-required-message="Required field" required
+              data-message-container="inputtitleError"
+              minlength="10"
+            />
+          </div>
+        </div>
+
+
+
+    
+       
+    
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputMaker"><b>Thư ký</b></label>
+            <input
+              type="text"
+              class="form-control"
+              id=""
+              placeholder="Tên người tạo cuộc họp"
+              data-required-message="Required field" required
+              data-message-container="inputtitleError"
+              minlength="10"
+            />
+          </div>
+        </div>
+      </div>
+
+
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-6" ng-controller="OldSelectpickerPanelCtrl as selectpickerVm">
         <div class="form-group">
-          <label for="inputPTake"><b>Đơn vị nhận</b></label>
-            <select class="form-control" title="Chọn đơn vị nhận" selectpicker required>
-              <option>VietInfo Corp</option>
-              <option>Công ty trách nhiệm hữu hạn</option>
-              <option>Tâp đoàn VinGroup</option>
-                
+          <label><b>Đơn vị</b></label>
+            <select class="form-control selectpicker" selectpicker title="Chọn đơn vị"
+                    ng-model="selectpickerVm.standardSelected"
+                    placeholder="Chọn phòng họp"
+                    ng-options="item as item.label for item in selectpickerVm.donvi">
             </select>
         </div>
-    </div>
-
-    <div class="col-sm-6">
-      <div class="form-group">
-        <label type="text" for="inputPTakeRoom"><b>Phòng ban</b></label>
-          <select class="form-control" title="Chọn phòng ban" selectpicker required>
-            <option>Chủ tịch</option>
-            <option>Giám đốc</option>
-            <option>Phòng kinh doanh</option>
-            <option>Phòng sales</option>
-            <option>Phòng kế toán</option>
-            <option>Phòng nhân sự</option>
-          </select>
-      </div>
   </div>
+
+  <div class="col-sm-6" ng-controller="OldSelectpickerPanelCtrl as selectpickerVm">
+    <div class="form-group">
+      <label><b>Phòng ban</b></label>
+        <select class="form-control selectpicker" selectpicker title="Chọn phòng ban"
+                ng-model="selectpickerVm.standardSelected"
+                placeholder="Chọn phòng họp"
+                ng-options="item as item.label for item in selectpickerVm.phongban">
+        </select>
+    </div>
+</div>
     </div>
   
 
@@ -122,7 +216,7 @@
             <input
               type="text"
               class="form-control"
-              id="inputAddressReciver"
+              id="addressMeet "
               placeholder="Địa Chỉ Đơn Vị Nhận"
               data-required-message="Required field" required
               data-message-container="inputtitleError"
@@ -173,10 +267,12 @@
                   close-text="close"
                   alt-input-formats="altInputFormats"
                r   show-button-bar="false"
-                  placeholder="Nhập Ngày Duyệt"
+                  placeholder="01/01/2001"
+                  type="button" class="btn btn-default" ng-click="open()"
+
                 />
-                <span class="input-group-btn">
-                  <button type="button" class="btn btn-default" ng-click="open()">
+                <span class="input-group-btn" >
+                  <button  type="button" class="btn btn-default" ng-click="open()">
                     <i class="glyphicon glyphicon-calendar"></i>
                   </button>
                 </span>
@@ -206,7 +302,7 @@
           </div>
         </div>
         <div style="text-align:center;">
-        <button type="submit" value="Reset" class="btn btn-success" >Nhập </button>
+        <button class="btn btn-success" ng-click="">Nhập </button>
         
         <!-- <buttont type="reset" value="Reset" class="btn btn-default">Reset</buttont> -->
         <button class="btn btn-default" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
