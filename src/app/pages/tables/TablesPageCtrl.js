@@ -496,7 +496,7 @@
       }
     ];
 
-    $scope.editableTableData = $scope.smartTableData.slice(0, 36);
+    $scope.editableTableData = $scope.peopleTabData.slice(0, 36);
 
     $scope.peopleTableData = [
       {

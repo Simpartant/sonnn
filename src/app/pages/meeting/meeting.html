@@ -3,14 +3,14 @@
   <div ba-panel ba-panel-class="with-scroll" ba-panel-title="">
     <div ng-include="'app.pages/form/layouts/widgets/blockForm.html'"></div>
     <!--  -->
-    <label>
+    <form>
     <div>
       <div class="row">
               <div class="col-sm-3" ng-controller="OldSelectpickerPanelCtrl as selectpickerVm">
                 <div class="form-group">
                   <label><b>Chủ đề cuộc họp</b></label>
                     <select class="form-control selectpicker" selectpicker title="Chọn chủ đề"
-                            ng-model="selectpickerVm.standardSelected"                           
+                            ng-model="selectpickerVm.standardSelected" required                        
                             ng-options="item as item.label for item in selectpickerVm.standardSelectItems">
                     </select>
                 </div>
@@ -19,14 +19,12 @@
             <div class="form-group">
               <label><b>Phòng</b></label>
                 <select class="form-control selectpicker" selectpicker title="Chọn phòng họp"
-                        ng-model="selectpickerVm.standardSelected"
+                        ng-model="selectpickerVm.standardSelected" required
                         ng-options="item as item.label for item in selectpickerVm.phonghop">
                 </select>
             </div>
       </div>
-        
-      
-    
+   
         <div class="form-group">
           <div
             class="col-xlg-3 col-md-3 col-sm-3"
@@ -35,7 +33,7 @@
           <label><b>Ngày họp</b></label>
             <p class="input-group">
               <input
-               locale="vi"
+               ng-locale="vi"
                 type="text"
                 id="dateMeet"
                 class="form-control"
@@ -106,13 +104,12 @@
               type="button" class="btn btn-default" ng-click="open()"
             />
           </p>
-          
         </div>
-
-
         </div>
-      </div>
-      <!-- -->
+<!-- đóng row -->
+      </div>  
+      
+
       <div class="row">
         <div class="col-sm-6">
           <div class="form-group">
@@ -139,10 +136,11 @@
               placeholder="Tên người tạo cuộc họp"
               data-required-message="Required field" required
               data-message-container="inputtitleError"
-              minlength="10"
+              minlength="5"
             />
           </div>
         </div>
+        <!-- đónh row -->
       </div>
 
       <div class="row">
@@ -153,7 +151,7 @@
               type="text"
               class="form-control"
               id=""
-              placeholder="THọ tên chủ trì (ông/bà)"
+              placeholder="Họ tên chủ trì (ông/bà)"
               data-required-message="Required field" required
               data-message-container="inputtitleError"
               minlength="10"
@@ -161,11 +159,6 @@
           </div>
         </div>
 
-
-
-    
-       
-    
         <div class="col-sm-6">
           <div class="form-group">
             <label for="inputMaker"><b>Thư ký</b></label>
@@ -176,10 +169,11 @@
               placeholder="Tên người tạo cuộc họp"
               data-required-message="Required field" required
               data-message-container="inputtitleError"
-              minlength="10"
+              minlength="5"
             />
           </div>
         </div>
+        <!-- đóng row -->
       </div>
 
 
@@ -189,7 +183,7 @@
           <label><b>Đơn vị</b></label>
             <select class="form-control selectpicker" selectpicker title="Chọn đơn vị"
                     ng-model="selectpickerVm.standardSelected"
-                    placeholder="Chọn phòng họp"
+                    placeholder="Chọn phòng họp" required
                     ng-options="item as item.label for item in selectpickerVm.donvi">
             </select>
         </div>
@@ -200,11 +194,12 @@
       <label><b>Phòng ban</b></label>
         <select class="form-control selectpicker" selectpicker title="Chọn phòng ban"
                 ng-model="selectpickerVm.standardSelected"
-                placeholder="Chọn phòng họp"
+                placeholder="Chọn phòng họp" required
                 ng-options="item as item.label for item in selectpickerVm.phongban">
         </select>
     </div>
 </div>
+<!-- đóng row -->
     </div>
   
 
@@ -220,7 +215,7 @@
               placeholder="Địa Chỉ Đơn Vị Nhận"
               data-required-message="Required field" required
               data-message-container="inputtitleError"
-              minlength="10"
+              minlength="5"
             />
           </div>
         </div>
@@ -236,17 +231,18 @@
               placeholder="Tên Người Kiểm Duyệt"
               data-required-message="Required field" required
               data-message-container="inputtitleError"
-              minlength="10"
+              minlength="5"
             />
           </div>
         </div>
+        <!-- đóng row -->
     </div>
      
          <div class = "row">
           <div class="col-sm-6">
             <div class="form-group">
                 <label for="fileupload"><b>Chọn tài liệu đính kèm</b></label>
-                <input type="file" class="form-control" [(ngModel)]="model.fileupload" required>
+                <input type="file"  ng-locale="vi" class="form-control" [(ngModel)]="model.fileupload" required >
             </div>
           </div>  
           <div class="form-group">
@@ -257,6 +253,7 @@
               <label><b>Ngày Duyệt</b></label>
               <p class="input-group">
                 <input
+                ng-locale="vi"
                   type="text"
                   class="form-control"
                   uib-datepicker-popup="dd/MM/yyyy"
@@ -278,13 +275,10 @@
                 </span>
               </p>
             </div>
-          </div>   
+          </div>  
+          <!-- đóng row  -->
          </div>
 
-
-      
-  
-    
       <div class="row">
         <div class="col-sm-12">
           <div class="form-group">
@@ -300,21 +294,18 @@
             </div>
           </div>
           </div>
-        </div>
-        <div style="text-align:center;">
-        <button class="btn btn-success" ng-click="">Nhập </button>
         
-        <!-- <buttont type="reset" value="Reset" class="btn btn-default">Reset</buttont> -->
+        <div style="text-align:center;">
+        <button type="submit" class="btn btn-success" value="submit">Nhập </button>
+        
+       
         <button class="btn btn-default" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
         <button onclick="window.location.href = '#/search';" type="button" class="btn btn-danger"><i class="ion-arrow"></i> Trở về</button>
-       
-
-
-      </div>
       </div>
     </div>
-    </div>
-  </div>
+
+    
+ 
     </form>
   
 

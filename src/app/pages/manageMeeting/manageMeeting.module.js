@@ -8,7 +8,7 @@
     function routeConfig($stateProvider, $urlRouterProvider) {
       $stateProvider
           .state('manageMeeting', {
-            url: '/manageMeeting',
+            url: '^/manageMeeting',
             template : '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
             abstract: true,
             controller: 'ManageCtrl',

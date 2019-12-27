@@ -1,29 +1,38 @@
 <div class="horizontal-scroll">
-  
+  <div class="form-group">
   <label>Rows on page
     <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
             ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
     </select>
   </label>
-  <table class="table table-condensed">
+  <table class="table table-bordered table-hover table-condensed">
     <thead>
-    <tr>
+    <tr >
       <th class="table-id">#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
-      <th>Email</th>
-      <th>Status</th>
-    </tr>
+      <th><b>Chủ đề</b></th>
+      <th><b>Giờ bắt đầu</b></th>
+      <th><b>Ngày</b></th>
+      <th><b>Phòng</b></th>
+      <th><b>Chủ trì</b></th>
+      <th><b>Status</b></th>
+      <th><b>Chức năng</b></th>
+    </tr >
     </thead>
     <tbody>
     <tr ng-repeat="item in peopleTableData">
       <td class="table-id">{{item.id}}</td>
-      <td>{{item.firstName}}</td>
-      <td>{{item.lastName}}</td>
-      <td>{{item.username}}</td>
-      <td><a class="email-link" ng-href="mailto:{{item.email}}">{{item.email}}</a></td>
+      <td>{{item.title}}</td>
+      <td>{{item.time}}</td>
+      <td>{{item.date}}</td>
+      <td>{{item.room}}</td>
+      <td>{{item.boss}}</td>
       <td><button class="status-button btn btn-xs btn-{{item.status}}">{{item.status}}</button></td>
+      <td>
+        <div class="buttons" ng-show="!rowform.$visible">
+          <button class="btn btn-primary editable-table-button btn-xs" ng-click="rowform.$show()"><i class="ion-edit"></i></button>
+          <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeUser($index)"><i class="ion-trash-a"></i></button>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>

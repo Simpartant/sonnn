@@ -17,48 +17,93 @@
       $scope.peopleTableData = [
         {
           id: 1,
-          firstName: 'Mark',
-          lastName: 'Otto',
-          username: '@mdo',
-          email: 'mdo@gmail.com',
-          age: '28',
-          status: 'info'
-        },
-        {
-          id: 2,
-          firstName: 'Jacob',
-          lastName: 'Thornton',
-          username: '@fat',
-          email: 'fat@yandex.ru',
-          age: '45',
-          status: 'primary'
-        },
-        {
-          id: 3,
-          firstName: 'Larry',
-          lastName: 'Bird',
-          username: '@twitter',
-          email: 'twitter@outlook.com',
-          age: '18',
+          title: 'Họp triển khai công việc',
+          time: '02:00 pm',
+          date: '30/12/2019',
+          room: '101',
+          boss: 'Chủ tịch',
           status: 'success'
         },
         {
+          id: 2,
+          title: 'Họp giải quyết vấn đề',
+          time: '08:00 am',
+          date: '10/12/2019',
+          room: '102',
+          boss: 'Giám đốc',
+          status: 'success'
+        },
+        {
+          id: 3,
+          title: 'Họp lấy ý kiến, phiếu bầu',
+          time: '05:00 pm',
+          date: '15/12/2019',
+          room: '103',
+          boss: 'Chủ tịch',
+          status: 'pending'
+        },
+        {
           id: 4,
-          firstName: 'John',
-          lastName: 'Snow',
-          username: '@snow',
-          email: 'snow@gmail.com',
-          age: '20',
-          status: 'danger'
+          title: 'Họp triển khai công việc',
+          time: '09:00 am',
+          date: '20/12/2019',
+          room: '104',
+          boss: 'Trưởng phòng',
+          status: 'pending'
         },
         {
           id: 5,
-          firstName: 'Son',
-          lastName: 'Sparrow',
-          username: '@jack',
-          email: 'jack@yandex.ru',
-          age: '30',
-          status: 'warning'
+          title: 'Họp trao đổi thông tin',
+          time: '10:00 am',
+          date: '25/12/2019',
+          room: '105',
+          boss: 'Team leader',
+          status: 'pending'
+        },
+        {
+          id: 6,
+          title: 'Họp triển khai công việc',
+          time: '02:00 pm',
+          date: '30/12/2019',
+          room: '101',
+          boss: 'Chủ tịch',
+          status: 'pending'
+        },
+        {
+          id: 7,
+          title: 'Họp giải quyết vấn đề',
+          time: '08:00 am',
+          date: '10/12/2019',
+          room: '102',
+          boss: 'Giám đốc',
+          status: 'success'
+        },
+        {
+          id: 8,
+          title: 'Họp lấy ý kiến, phiếu bầu',
+          time: '05:00 pm',
+          date: '15/12/2019',
+          room: '103',
+          boss: 'Chủ tịch',
+          status: 'pending'
+        },
+        {
+          id: 9,
+          title: 'Họp triển khai công việc',
+          time: '09:00 am',
+          date: '20/12/2019',
+          room: '104',
+          boss: 'Trưởng phòng',
+          status: 'pending'
+        },
+        {
+          id: 10,
+          title: 'Họp trao đổi thông tin',
+          time: '10:00 am',
+          date: '25/12/2019',
+          room: '105',
+          boss: 'Team leader',
+          status: 'success'
         }
       ];
   
@@ -79,6 +124,9 @@
         {id: 4, text: 'admin'}
       ];
   
+      var vm = this;
+      vm.rowCollection = [];
+
       $scope.showGroup = function(user) {
         if(user.group && $scope.groups.length) {
           var selected = $filter('filter')($scope.groups, {id: user.group});

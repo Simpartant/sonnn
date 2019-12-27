@@ -8,14 +8,14 @@
   function routeConfig($stateProvider) {
     $stateProvider
         .state('meeting', {
-          url: '/meeting',
+          url: '^/meeting',
           templateUrl: 'app/pages/meeting/meeting.html',
           title: 'Tạo cuộc họp',
           // sidebarMeta: {
           //   icon: 'ion-ios-briefcase',
           //   order: 0,
-          },
-        // }
+          // }
+        },
         );
         
   }
