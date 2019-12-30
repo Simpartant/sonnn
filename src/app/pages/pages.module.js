@@ -10,21 +10,23 @@
     // 'BlurAdmin.pages.components',
     // 'BlurAdmin.pages.form',
     // 'BlurAdmin.pages.tables',
-    // // 'BlurAdmin.pages.charts',
-    // // 'BlurAdmin.pages.maps',
-    // // 'BlurAdmin.pages.profile',
-    // // 'BlurAdmin.pages.category',
+    // 'BlurAdmin.pages.charts',
+    // 'BlurAdmin.pages.maps',
+    // 'BlurAdmin.pages.profile',
+    // 'BlurAdmin.pages.category',
     // 'BlurAdmin.pages.infoprofile',
-    // // 'BlurAdmin.pages.createForm',
-    'BlurAdmin.pages.manageMeeting',
-    'BlurAdmin.pages.meeting'
+    // 'BlurAdmin.pages.createForm',
+    // 'BlurAdmin.pages.manageMeeting',
+    // 'BlurAdmin.pages.meeting',
+    'BlurAdmin.pages.demo',
+    'BlurAdmin.pages.myPage'
     
   ])
       .config(routeConfig);
 
   /** @ngInject */
   function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
-    $urlRouterProvider.otherwise('manageMeeting');
+    $urlRouterProvider.otherwise('demo');
 
     // baSidebarServiceProvider.addStaticItem({
     //   title: 'Pages',

@@ -1,0 +1,63 @@
+<div ba-panel ba-panel-class="with-scroll" ba-panel-title="Demo">
+    <div class="panel-content" ng-controller="listDemoCtrl as mainCtrl">
+        <div class="form-horizontal" style="text-align: center !important; ">
+
+            <!--Table's data-->
+            <div class="horizontal-scroll">
+                <div class="form-group select-page-size-wrap " style="padding-left: 23px !important;">
+                    <label>Số dòng hiển thị
+                        <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
+                                ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+                        </select>
+                    </label>
+                </div>
+                <table st-table="displayedCollection" st-safe-src="mainCtrl.rowCollection" class="table table-striped">
+                    <thead>
+                        <tr class="sortable">
+                            <td style="text-align: center;">#</td>
+                            <th st-sort="FullName">Họ Tên</th>
+                            <th st-sort="DateOfBirth">Năm sinh</th>
+                            <td>Tình trạng</td>
+                            <td>Edit</td>
+                            <td>Active</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in displayedCollection">
+                            <td>{{item.No}}</td>
+                            <td>{{item.FullName}}</td>
+                            <td>{{item.DateOfBirth}}</td>
+                            <td>{{item.isActive}}</td>
+                            <td>
+                                <a title="Xử lý" class="btn btn-primary btn-xs" href="" ng-click="editData(item.FullName)"><span class="glyphicon glyphicon-pencil"></span></a>
+                            </td>
+                            <td>
+                                <a title="Active" class="btn btn-warning btn-xs" href="" ng-click="activeData(item.FullName)"><span class="glyphicon glyphicon-refresh"></span></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="100" class="text-center">
+                                <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <!--end of Table's data-->
+
+            <!--Form's button-->
+            <div style="text-align: center !important;">
+                <button type="button" ng-click="createNew()" class="btn btn-danger btn-with-icon save-profile">
+                    <i class="ion-plus-round"></i>Thêm mới
+                </button>
+                <button type="button" ng-click="findData()" class="btn btn-success btn-with-icon save-profile">
+                    <i class="ion-search"></i>Tìm kiếm
+                </button>
+            </div>
+            <!--end of Form's button-->
+
+        </div>
+    </div>
+</div>
