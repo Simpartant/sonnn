@@ -2,7 +2,7 @@
     <div class="panel-content">
         <div class="form-horizontal" style="text-align: center !important; ">
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <div class="col-sm-2" style="text-align: right;">
                     <label for="inputFullName" class="control-label">Họ Tên</label>
                 </div>
@@ -15,7 +15,136 @@
                 <div class="col-sm-3">
                     <input type="text" class="form-control" ng-model="inputDateOfBirth" id="inputDateOfBirth" placeholder="Năm sinh">
                 </div>
+            </div> -->
+
+            <div class="form-group">
+                <div class="col-sm-1" style="text-align: right;">
+                    <label for="inputDate" class="control-label">Ngày họp</label>
+                </div>
+                <div class="col-sm-3" ng-controller="myPageCtrl">
+                    <p class="input-group">
+                        <input
+                        ng-locale="vi"
+                          type="text"
+                          class="form-control"
+                          uib-datepicker-popup="shortDate"
+                          datepicker-options="options"
+                          is-open="opened"
+                          ng-required="true"
+                          close-text="close"
+                          alt-input-formats="altInputFormats"
+                          show-button-bar="false"
+                          placeholder="01/01/2001"
+                          type="button" class="btn btn-default" ng-click="open()"
+                          id="inputDate"
+                          ng-model="inputDate"
+                        />
+                        <span class="input-group-btn" >
+                          <button  type="button" class="btn btn-default" ng-click="open()">
+                            <i class="ion-ios-calendar"></i>
+                          </button>
+                        </span>
+                      </p>
+                </div>
+                <div class="col-sm-1" style="text-align: right;">
+                    <label for="inputTime" class="control-label">Giờ họp</label>
+                </div>
+                <div class="col-sm-1">
+                    <input type="text" class="form-control" ng-model="inputTimeFrom" id="inputTimeFrom" placeholder="12:00">
+                </div>
+                <div class="col-sm-1">
+                    <input type="text" class="form-control" ng-model="inputTimeTo" id="inputTimeTo" placeholder="12:00">
+                </div>
+                <div class="col-sm-1" style="text-align: right;">
+                    <label for="inputRoom" class="control-label">Phòng</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" ng-model="inputRoom" id="inputRoom" placeholder="Phòng">
+                </div>
             </div>
+
+            <div class="form-group">
+                <div class="col-sm-1" style="text-align: right;">
+                    <label for="inputContend" class="control-label">Chủ đề</label>
+                </div>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" ng-model="inputContend" id="inputContend" placeholder="Chủ đề">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-1" style="text-align: right;">
+                    <label for="inputBoss" class="control-label">Chủ trì</label>
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" ng-model="inputBoss" id="inputBoss" placeholder="Chủ trì">
+                </div>
+                <div class="col-sm-2" style="text-align: right;">
+                    <label for="inputThuKy" class="control-label">Thư ký</label>
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" ng-model="inputThuKy" id="inputThuKy" placeholder="Thư ký">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-1" style="text-align: right;">
+                    <label for="inputDonVi" class="control-label">Đơn vị</label>
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" ng-model="inputDonVi" id="inputDonVi" placeholder="Đơn vị">
+                </div>
+                <div class="col-sm-2" style="text-align: right;">
+                    <label for="inputPhongBan" class="control-label">Phòng ban</label>
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" ng-model="inputPhongBan" id="inputPhongBan" placeholder="Phòng Ban">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-1" style="text-align: right;">
+                    <label for="inputAddress" class="control-label">Địa chỉ</label>
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" ng-model="inputAddress" id="inputAddress" placeholder="Địa chỉ">
+                </div>
+                <div class="col-sm-2" style="text-align: right;">
+                    <label for="radioOptions" class="control-label">Tình trạng:</label>
+                </div>
+                <div class="col-xs-1" style="text-align: left !important;">
+                    <label class="radio-inline custom-radio nowrap">
+                      <input type="radio" name="radioOptions" id="Radio1" value="option1">
+                      <span>Bắt buộc</span>
+                    </label>
+                  </div>
+                  <div class="col-sm-1" style="text-align: left !important;">
+                    <label class="radio-inline custom-radio nowrap">
+                      <input type="radio" name="radioOptions" id="Radio2" value="option2">
+                      <span>Không bắt buộc</span>
+                    </label>
+                  </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-1" style="text-align: right;">
+                    <label for="radioOptions" class="control-label">TL đính kèm</label>
+                </div>
+                <div class="col-sm-10" style="text-align: right;">
+                
+                <input type="file" class="form-control" [(ngModel)]="model.fileupload" >
+            </div> 
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-1" style="text-align: right;">
+                    <label for="inputArea" class="control-label">Ghi chú</label>
+                </div>
+                <div class="col-sm-10">
+                <textarea type="text" class="form-control" ng-model="inputArea" id="inputArea" placeholder="Nhập nội dung" ></textarea>
+              </div>
+              </div>
+
 
             <!--Form's button-->
             <div style="text-align: center !important;">
@@ -29,4 +158,24 @@
             <!--end of Form's button-->
         </div>
     </div>
+    </div>
 </div>
+
+
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .center{
+      width: 40%;
+margin-left: 30%;
+margin-right: 30%
+    }
+    .right{
+      width: 40%;
+margin-left: 0%;
+margin-right: 100%
+    }    
+  </style>

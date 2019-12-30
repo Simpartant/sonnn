@@ -13,6 +13,18 @@
     /*******start controller*******/
     /******************************************/
     function myPageCtrl($scope, $state) {
+        $scope.open = open;
+        $scope.opened = false;
+        $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+        $scope.format = $scope.formats[0];
+        $scope.options = {
+            showWeeks: false
+        };
+
+        function open() {
+            $scope.opened = true;
+        }
+    
  
         $scope.DataDemos = [];
         if (sessionStorage.DataDemos != undefined && sessionStorage.DataDemos != "undefined")
