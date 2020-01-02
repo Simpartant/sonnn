@@ -15,8 +15,14 @@
                     <thead>
                         <tr class="sortable">
                             <td style="text-align: center;">#</td>
-                            <th st-sort="FullName">Họ Tên</th>
-                            <th st-sort="DateOfBirth">Năm sinh</th>
+                            <!-- <th st-sort="FullName">Họ Tên</th>
+                            <th st-sort="DateOfBirth">Năm sinh</th> -->
+                            <th st-sort="NgayThang">Ngày</th>
+                            <th st-sort="Contend">Chủ đề</th>
+                            <th st-sort="Boss">Chủ trì</th>
+                            <th st-sort="Phong">Phòng</th>
+                            <th st-sort="DonVi">Đơn vị</th>
+                            <th st-sort="PhongBan">Phòng ban</th>
                             <td>Tình trạng</td>
                             <td>Edit</td>
                             <td>Active</td>
@@ -25,14 +31,20 @@
                     <tbody>
                         <tr ng-repeat="item in displayedCollection">
                             <td>{{item.No}}</td>
-                            <td>{{item.FullName}}</td>
-                            <td>{{item.DateOfBirth}}</td>
+                            <!-- <td>{{item.FullName}}</td>
+                            <td>{{item.DateOfBirth}}</td> -->
+                            <td>{{item.NgayThang}}</td>
+                            <td>{{item.Contend}}</td>
+                            <td>{{item.Boss}}</td>
+                            <td>{{item.Phong}}</td>
+                            <td>{{item.DonVi}}</td>
+                            <td>{{item.PhongBan}}</td>
                             <td>{{item.isActive}}</td>
                             <td>
-                                <a title="Xử lý" class="btn btn-primary btn-xs" href="" ng-click="editData(item.FullName)"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a title="Xử lý" class="btn btn-primary btn-xs" href="" ng-click="editData(item.Boss)"><span class="glyphicon glyphicon-pencil"></span></a>
                             </td>
                             <td>
-                                <a title="Active" class="btn btn-warning btn-xs" href="" ng-click="activeData(item.FullName)"><span class="glyphicon glyphicon-refresh"></span></a>
+                                <a title="Active" class="btn btn-warning btn-xs" href="" ng-click="activeData(item.Boss)"><span class="glyphicon glyphicon-refresh"></span></a>
                             </td>
                         </tr>
                     </tbody>

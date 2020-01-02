@@ -40,9 +40,13 @@
         init();
         function init() {
             for (var n = 0; n < $scope.DataDemos.length; n++) {
-                if ($scope.DataDemos[n].FullName == sessionStorage.itemID) {
-                    $scope.inputFullName = $scope.DataDemos[n].FullName;
-                    $scope.inputDateOfBirth = $scope.DataDemos[n].DateOfBirth;
+                if ($scope.DataDemos[n].Boss == sessionStorage.itemID) {
+                    $scope.inputNgayThang = $scope.DataDemos[n].NgayThang;
+                    $scope.inputContend = $scope.DataDemos[n].Contend;
+                    $scope.inputBoss = $scope.DataDemos[n].Boss;
+                    $scope.inputPhong = $scope.DataDemos[n].Phong;
+                    $scope.inputDonVi = $scope.DataDemos[n].DonVi;
+                    $scope.inputPhongBan = $scope.DataDemos[n].PhongBan;
                 }
             }
         }
@@ -53,19 +57,27 @@
 
         $scope.Save = function() {
 
-            var FullName = angular.element(document).find('#inputFullName')[0];
-            var DateOfBirth = angular.element(document).find('#inputDateOfBirth')[0];
+            var NgayThang = angular.element(document).find('#inputNgayThang')[0];
+            var Contend = angular.element(document).find('#inputContend')[0];
+            var Boss = angular.element(document).find('#inputBoss')[0];
+            var Phong = angular.element(document).find('#inputPhong')[0];
+            var DonVi = angular.element(document).find('#inputDonVi')[0];
+            var PhongBan = angular.element(document).find('#inputPhongBan')[0];
 
             if (sessionStorage.itemID != undefined && sessionStorage.itemID != "undefined") { //MODIFIED
                 for (var n = 0; n < $scope.DataDemos.length; n++) {
-                    if ($scope.DataDemos[n].FullName == sessionStorage.itemID) {
-                        $scope.DataDemos[n].FullName = FullName.value;
-                        $scope.DataDemos[n].DateOfBirth = DateOfBirth.value;
+                    if ($scope.DataDemos[n].Boss == sessionStorage.itemID) {
+                        $scope.DataDemos[n].NgayThang = NgayThang.value;
+                        $scope.DataDemos[n].Contend = Contend.value;
+                        $scope.DataDemos[n].Boss = Boss.value;
+                        $scope.DataDemos[n].Phong = Phong.value;
+                        $scope.DataDemos[n].DonVi = DonVi.value;
+                        $scope.DataDemos[n].PhongBan = PhongBan.value;
                     }
                 }
             }
             else { //ADD NEW 
-                $scope.DataDemo = {"FullName" : FullName.value, "DateOfBirth" : DateOfBirth.value, "isActive" : true};
+                $scope.DataDemo = { "NgayThang": NgayThang.value, "Contend": Contend.value,"Boss": Boss.value, "Phong": Phong.value, "DonVi": DonVi.value, "PhongBan": PhongBan.value, "isActive" : true};
 
                 $scope.DataDemos.push($scope.DataDemo);
             }

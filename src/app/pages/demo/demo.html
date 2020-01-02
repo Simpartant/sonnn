@@ -17,6 +17,59 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                <div class="col-sm-2" style="text-align: right;">
+                    <label for="inputAddress" class="control-label">Nơi ở</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" ng-model="inputAddress" id="inputAddress" placeholder="Nơi ở">
+                </div>
+                <div class="form-group"> 
+                    <div class="col-sm-1" style="text-align: right;">
+                        <label for="inputDtime" class="control-label">Ngày họp</label>
+                    </div>
+                    <div class="col-sm-3" ng-controller="demoCtrl">
+                        <p class="input-group">
+                            <input
+                            ng-locale="vi"
+                              type="text"
+                              class="form-control"
+                              uib-datepicker-popup="dd/MMMM/yyyy"
+                              datepicker-options="options"
+                              is-open="opened"
+                              ng-required="true"
+                              close-text="close"
+                              alt-input-formats="altInputFormats"
+                              show-button-bar="false"
+                              placeholder="01/01/2001"
+                              type="button" class="btn btn-default" ng-click="open()"
+                              id="inputDtime"
+                              ng-model="inputDtime"
+                            />
+                            <span class="input-group-btn" >
+                              <button  type="button" class="btn btn-default" ng-click="open()">
+                                <i class="ion-ios-calendar"></i>
+                              </button>
+                            </span>
+                          </p>
+                    </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-2" style="text-align: right;">
+                <label for="inputAddress" class="control-label">Nơi ở</label>
+            </div>
+            <div>
+                <select class="form-control"  id="inputSelect"
+                ng-model="inputSelect">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                </select>
+            </div>
+
+        </div>
+
             <!--Form's button-->
             <div style="text-align: center !important;">
                 <button type="button" ng-click="Save()" class="btn btn-success btn-with-icon save-profile">

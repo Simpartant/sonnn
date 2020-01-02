@@ -24,8 +24,13 @@
         init();
         function init() {
             for (var n = 0; n < arrData.length; n++) {
-                vm.rowCollection[n] = {"No" : n + 1, "FullName" : arrData[n].FullName
-                                    , "DateOfBirth" : arrData[n].DateOfBirth
+                vm.rowCollection[n] = {"No" : n + 1, 
+                                    "NgayThang" : arrData[n].NgayThang,
+                                    "Contend" : arrData[n].Contend,
+                                    "Boss" : arrData[n].Boss,
+                                    "Phong" : arrData[n].Phong,
+                                    "DonVi" : arrData[n].DonVi,
+                                    "PhongBan" : arrData[n].PhongBan
                                     , "isActive" : arrData[n].isActive == true ? "Có" : "Không"};
             }
         }
@@ -43,7 +48,7 @@
             $scope.DataDemos = JSON.parse(sessionStorage.getItem('DataDemos'));
 
             for (var n = 0; n < $scope.DataDemos.length; n++) {
-                if ($scope.DataDemos[n].FullName == itemID) {
+                if ($scope.DataDemos[n].Boss == itemID) {
                     $scope.DataDemos[n].isActive = !$scope.DataDemos[n].isActive;
                 }
             }

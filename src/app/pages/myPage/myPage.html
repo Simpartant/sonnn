@@ -17,9 +17,9 @@
                 </div>
             </div> -->
 
-            <div class="form-group">
+            <div class="form-group"> 
                 <div class="col-sm-1" style="text-align: right;">
-                    <label for="inputDate" class="control-label">Ngày họp</label>
+                    <label for="inputChooseDate" class="control-label">Ngày họp</label>
                 </div>
                 <div class="col-sm-3" ng-controller="myPageCtrl">
                     <p class="input-group">
@@ -36,8 +36,8 @@
                           show-button-bar="false"
                           placeholder="01/01/2001"
                           type="button" class="btn btn-default" ng-click="open()"
-                          id="inputDate"
-                          ng-model="inputDate"
+                          id="inputNgayThang"
+                          ng-model="inputNgayThang"
                         />
                         <span class="input-group-btn" >
                           <button  type="button" class="btn btn-default" ng-click="open()">
@@ -50,16 +50,51 @@
                     <label for="inputTime" class="control-label">Giờ họp</label>
                 </div>
                 <div class="col-sm-1">
-                    <input type="text" class="form-control" ng-model="inputTimeFrom" id="inputTimeFrom" placeholder="12:00">
+                    <select class="form-control" title="12:00" ng-model="inputGioBatDau" id="inputGioBatDau">
+                        <option>07:00</option>
+                        <option>08:00</option>
+                        <option>09:00</option>
+                        <option>10:00</option>
+                        <option>11:00</option>
+                        <option>12:00</option>
+                        <option>13:00</option>
+                        <option>14:00</option>
+                        <option>15:00</option>
+                        <option>16:00</option>
+                        <option>17:00</option>
+                        <option>18:00</option>
+                        <option>19:00</option>
+                        <option>20:00</option>
+            </select>
                 </div>
                 <div class="col-sm-1">
-                    <input type="text" class="form-control" ng-model="inputTimeTo" id="inputTimeTo" placeholder="12:00">
+                    <select class="form-control"title="12:00" ng-model="inputGioKetThuc" id="inputGioKetThuc">
+                        <option>07:00</option>
+                        <option>08:00</option>
+                        <option>09:00</option>
+                        <option>10:00</option>
+                        <option>11:00</option>
+                        <option>12:00</option>
+                        <option>13:00</option>
+                        <option>14:00</option>
+                        <option>15:00</option>
+                        <option>16:00</option>
+                        <option>17:00</option>
+                        <option>18:00</option>
+                        <option>19:00</option>
+                        <option>20:00</option>
+            </select>
                 </div>
                 <div class="col-sm-1" style="text-align: right;">
                     <label for="inputRoom" class="control-label">Phòng</label>
                 </div>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" ng-model="inputRoom" id="inputRoom" placeholder="Phòng">
+                <div class="col-sm-3" >
+                    <select class="form-control"  ng-model="inputPhong" id="inputPhong" title="Chọn phòng họp">
+                        <option>101</option>
+                        <option>102</option>
+                        <option>103</option>
+                        <option>104</option>
+            </select>
                 </div>
             </div>
 
@@ -68,7 +103,14 @@
                     <label for="inputContend" class="control-label">Chủ đề</label>
                 </div>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" ng-model="inputContend" id="inputContend" placeholder="Chủ đề">
+                    <select class="form-control"  ng-model="inputContend" id="inputContend"  title="Chọn chủ đề">
+                        <option>Họp triển khai công việc</option>
+                        <option>Họp giải quyết vấn đề</option>
+                        <option>Họp lấy ý kiến, phiếu bầu</option>
+                        <option>Họp triển khai công việc</option>
+                        <option>Họp trao đổi thông tin</option>
+                        <option>Họp mở rộng dân chủ</option>
+            </select>
                 </div>
             </div>
 
@@ -92,13 +134,23 @@
                     <label for="inputDonVi" class="control-label">Đơn vị</label>
                 </div>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" ng-model="inputDonVi" id="inputDonVi" placeholder="Đơn vị">
+                    <select class="form-control"  title="Chọn đơn vị" ng-model="inputDonVi" id="inputDonVi">
+                        <option>VietInfo Corp</option>
+                        <option>Creatory</option>
+                        <option>VinGroup</option>
+                        <option>Bitexco</option>
+            </select>
                 </div>
                 <div class="col-sm-2" style="text-align: right;">
                     <label for="inputPhongBan" class="control-label">Phòng ban</label>
                 </div>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" ng-model="inputPhongBan" id="inputPhongBan" placeholder="Phòng Ban">
+                    <select class="form-control" title="Chọn phòng ban" ng-model="inputPhongBan" id="inputPhongBan">
+                        <option>Chủ tịch</option>
+                        <option>Giám Đốc</option>
+                        <option>Phòng nhân sự</option>
+                        <option>Phòng IT</option>
+            </select>
                 </div>
             </div>
 
@@ -114,7 +166,7 @@
                 </div>
                 <div class="col-xs-1" style="text-align: left !important;">
                     <label class="radio-inline custom-radio nowrap">
-                      <input type="radio" name="radioOptions" id="Radio1" value="option1">
+                      <input type="radio" name="radioOptions" id="Radio1" value="option1" checked="checked">
                       <span>Bắt buộc</span>
                     </label>
                   </div>

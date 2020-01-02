@@ -17,6 +17,9 @@
                             <td style="text-align: center;">#</td>
                             <th st-sort="FullName">Họ Tên</th>
                             <th st-sort="DateOfBirth">Năm sinh</th>
+                            <th st-sort="Address">Nơi ở</th>
+                            <th st-sort="Dtime">Thời gian</th>
+                            <th st-sort="Select">Chọn</th>
                             <td>Tình trạng</td>
                             <td>Edit</td>
                             <td>Active</td>
@@ -27,6 +30,9 @@
                             <td>{{item.No}}</td>
                             <td>{{item.FullName}}</td>
                             <td>{{item.DateOfBirth}}</td>
+                            <td>{{item.Address}}</td>
+                            <td>{{item.Dtime}}</td>
+                            <td>{{item.Select}}</td>
                             <td>{{item.isActive}}</td>
                             <td>
                                 <a title="Xử lý" class="btn btn-primary btn-xs" href="" ng-click="editData(item.FullName)"><span class="glyphicon glyphicon-pencil"></span></a>
