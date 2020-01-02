@@ -26,9 +26,9 @@
             templateUrl: 'app/pages/myPage/myPage.html',
             title: 'Create New',
             controller: "myPageCtrl",
-            sidebarMeta: {
-              order: 10,
-            },
+            // sidebarMeta: {
+            //   order: 10,
+            // },
           })
           .state('myPage.myList', {
             url: '^/myList',

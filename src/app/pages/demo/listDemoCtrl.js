@@ -26,9 +26,6 @@
             for (var n = 0; n < arrData.length; n++) {
                 vm.rowCollection[n] = {"No" : n + 1, "FullName" : arrData[n].FullName
                                     , "DateOfBirth" : arrData[n].DateOfBirth
-                                    , "Address" : arrData[n].Address
-                                    , "Dtime" : arrData[n].Dtime
-                                    , "Select" : arrData[n].Select
                                     , "isActive" : arrData[n].isActive == true ? "Có" : "Không"};
             }
         }

@@ -8,7 +8,7 @@
     // 'BlurAdmin.pages.dashboard',
     // 'BlurAdmin.pages.ui',
     // 'BlurAdmin.pages.components',
-    // 'BlurAdmin.pages.form',
+    'BlurAdmin.pages.form',
     // 'BlurAdmin.pages.tables',
     // 'BlurAdmin.pages.charts',
     // 'BlurAdmin.pages.maps',
@@ -18,7 +18,7 @@
     // 'BlurAdmin.pages.createForm',
     // 'BlurAdmin.pages.manageMeeting',
     // 'BlurAdmin.pages.meeting',
-    'BlurAdmin.pages.demo',
+    // 'BlurAdmin.pages.demo',
     'BlurAdmin.pages.myPage'
     
   ])
@@ -26,7 +26,7 @@
 
   /** @ngInject */
   function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
-    $urlRouterProvider.otherwise('demo');
+    $urlRouterProvider.otherwise('myPage');
 
     // baSidebarServiceProvider.addStaticItem({
     //   title: 'Pages',

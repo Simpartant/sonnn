@@ -14,6 +14,8 @@
     /******************************************/
     function myListCtrl($scope, $state) {
 
+        $scope.smartTablePageSize = 10;
+
         sessionStorage.itemID = undefined;
         var arrData = [];
         var vm = this;
@@ -30,8 +32,15 @@
                                     "Boss" : arrData[n].Boss,
                                     "Phong" : arrData[n].Phong,
                                     "DonVi" : arrData[n].DonVi,
-                                    "PhongBan" : arrData[n].PhongBan
-                                    , "isActive" : arrData[n].isActive == true ? "Có" : "Không"};
+                                    "PhongBan" : arrData[n].PhongBan,
+                                    "GioBatDau": arrData[n].GioBatDau,
+                                    "GioKetThuc": arrData[n].GioKetThuc, 
+                                    "ThuKy": arrData[n].ThuKy, 
+                                    "Address": arrData[n].Address, 
+                                    // "BatBuoc": arrData[n].BatBuoc, 
+                                    // "KoBatBuoc": arrData[n].KoBatBuoc, 
+                                    "Area": arrData[n].Area.value
+                                    , "isActive" : arrData[n].isActive == true ? "Chuẩn bị" : "Đã bắt đầu"};
             }
         }
 
@@ -57,6 +66,7 @@
 
             $state.reload();
         }
+      
 
     };
     /**##### End controller #####******/

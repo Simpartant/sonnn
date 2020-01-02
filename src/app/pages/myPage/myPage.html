@@ -19,7 +19,7 @@
 
             <div class="form-group"> 
                 <div class="col-sm-1" style="text-align: right;">
-                    <label for="inputChooseDate" class="control-label">Ngày họp</label>
+                    <label for="inputNgayThang" class="control-label">Ngày họp</label>
                 </div>
                 <div class="col-sm-3" ng-controller="myPageCtrl">
                     <p class="input-group">
@@ -27,7 +27,7 @@
                         ng-locale="vi"
                           type="text"
                           class="form-control"
-                          uib-datepicker-popup="shortDate"
+                          uib-datepicker-popup="dd/MMMM/yyyy"
                           datepicker-options="options"
                           is-open="opened"
                           ng-required="true"
@@ -166,25 +166,25 @@
                 </div>
                 <div class="col-xs-1" style="text-align: left !important;">
                     <label class="radio-inline custom-radio nowrap">
-                      <input type="radio" name="radioOptions" id="Radio1" value="option1" checked="checked">
+                      <input type="radio" name="checkBatBuoc" id="checkBatBuoc" value="option1" >
                       <span>Bắt buộc</span>
                     </label>
                   </div>
                   <div class="col-sm-1" style="text-align: left !important;">
                     <label class="radio-inline custom-radio nowrap">
-                      <input type="radio" name="radioOptions" id="Radio2" value="option2">
+                      <input type="radio" name="checkKoBatBuoc" id="checkKoBatBuoc" value="option2" >
                       <span>Không bắt buộc</span>
                     </label>
                   </div>
             </div>
 
             <div class="form-group">
-                <div class="col-sm-1" style="text-align: right;">
-                    <label for="radioOptions" class="control-label">TL đính kèm</label>
+                <div class="col-sm-1" style="text-align: right;" >
+                    <label for="inputUpload" class="control-label">TL đính kèm</label>
                 </div>
                 <div class="col-sm-10" style="text-align: right;">
                 
-                <input type="file" class="form-control" [(ngModel)]="model.fileupload" >
+                <input type="file" class="form-control" [(ngModel)]="model.fileupload" id="inputUpload" >
             </div> 
             </div>
 
