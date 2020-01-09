@@ -17,16 +17,17 @@
                             <td style="text-align: center;">#</td>
                             <!-- <th st-sort="FullName">Họ Tên</th>
                             <th st-sort="DateOfBirth">Năm sinh</th> -->
-                            <td st-sort="NgayThang">Ngày</td>
-                            <td st-sort="Contend">Chủ đề</td>
-                            <td st-sort="Boss">Chủ trì</td>
-                            <td st-sort="Phong">Phòng</td>
-                            <td st-sort="GioBatDau">Thời Gian</td>
-                            <td st-sort="DonVi">Đơn vị</td>
-                            <td st-sort="PhongBan">Phòng ban</td>
-                            <td>Tình trạng</td>
-                            <td>Edit</td>
-                            <td>Active</td>
+                            <td st-sort="NgayThang"><b>Ngày</b></td>
+                            <td st-sort="Contend"><b>Chủ đề</b></td>
+                            <td st-sort="Boss"><b>Chủ trì</b></td>
+                            <td st-sort="Phong"><b>Phòng</b></td>
+                            <td st-sort="GioBatDau"><b>Thời Gian</b></td>
+                            <td st-sort="DonVi"><b>Đơn vị</b></td>
+                            <td st-sort="PhongBan"><b>Phòng ban</b></td>
+                            <td><b>Tình trạng</b></td>
+                            <td><b>Edit</b></td>
+                            <td><b>Active</b></td>
+                            <!-- <td>Delete</td> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -48,6 +49,9 @@
                             <td>
                                 <a title="Active" class="btn btn-warning btn-xs" href="" ng-click="activeData(item.Boss)"><span class="glyphicon glyphicon-refresh"></span></a>
                             </td>
+                            <!-- <td>
+                                <a title="Delete" class="btn btn-danger btn-xs" href="" ng-click="deleteData(item.Boss)"><span class="glyphicon glyphicon-trash"></span></a>
+                            </td> -->
                         </tr>
                     </tbody>
                     <tfoot>
@@ -63,7 +67,7 @@
 
             <!--Form's button-->
             <div style="text-align: center !important;">
-                <button type="button" ng-click="createNew()" class="btn btn-danger btn-with-icon save-profile">
+                <button type="button" ng-click="createNew()" class="btn btn-primary btn-with-icon save-profile">
                     <i class="ion-plus-round"></i>Thêm mới
                 </button>
                 <button type="button" ng-click="findData()" class="btn btn-success btn-with-icon save-profile">

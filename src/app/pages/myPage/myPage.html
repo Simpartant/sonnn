@@ -1,43 +1,31 @@
 <div ba-panel ba-panel-class="with-scroll" ba-panel-title="{{Title}}">
     <div class="panel-content">
         <div class="form-horizontal" style="text-align: center !important; ">
-
-            <!-- <div class="form-group">
-                <div class="col-sm-2" style="text-align: right;">
-                    <label for="inputFullName" class="control-label">Họ Tên</label>
-                </div>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" ng-model="inputFullName" id="inputFullName" placeholder="Họ tên">
-                </div>
-                <div class="col-sm-2" style="text-align: right;">
-                    <label for="inputDateOfBirth" class="control-label">Năm sinh</label>
-                </div>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" ng-model="inputDateOfBirth" id="inputDateOfBirth" placeholder="Năm sinh">
-                </div>
-            </div> -->
+            
 
             <div class="form-group"> 
                 <div class="col-sm-1" style="text-align: right;">
-                    <label for="inputNgayThang" class="control-label">Ngày họp</label>
+                    <label for="inputNgayThang" class="control-label">Ngày họp (<b style="color:red;">*</b>)</label>
                 </div>
                 <div class="col-sm-3" ng-controller="myPageCtrl">
                     <p class="input-group">
                         <input
-                        ng-locale="vi"
-                          type="text"
+                          ng-locale="vi"
+                          type="datetime"
                           class="form-control"
-                          uib-datepicker-popup="dd/MMMM/yyyy"
+                          uib-datepicker-popup="d MMM, y"
                           datepicker-options="options"
                           is-open="opened"
                           ng-required="true"
-                          close-text="close"
+                          close-text="Close"
                           alt-input-formats="altInputFormats"
-                          show-button-bar="false"
+                          show-button-bar="true"
                           placeholder="01/01/2001"
-                          type="button" class="btn btn-default" ng-click="open()"
+                          ng-click="open()"
+                          name="inputNgayThang"
                           id="inputNgayThang"
-                          ng-model="inputNgayThang"
+                          ng-model="dt"
+                          style="font-size: 13px;"
                         />
                         <span class="input-group-btn" >
                           <button  type="button" class="btn btn-default" ng-click="open()">
@@ -50,46 +38,49 @@
                     <label for="inputTime" class="control-label">Giờ họp</label>
                 </div>
                 <div class="col-sm-1">
-                    <select class="form-control" title="12:00" ng-model="inputGioBatDau" id="inputGioBatDau">
-                        <option>07:00</option>
-                        <option>08:00</option>
-                        <option>09:00</option>
-                        <option>10:00</option>
-                        <option>11:00</option>
-                        <option>12:00</option>
-                        <option>13:00</option>
-                        <option>14:00</option>
-                        <option>15:00</option>
-                        <option>16:00</option>
-                        <option>17:00</option>
-                        <option>18:00</option>
-                        <option>19:00</option>
-                        <option>20:00</option>
+                    <select class="form-control" title="12:00" ng-model="inputGioBatDau" id="inputGioBatDau" ng-required="true">
+                        <option value=""></option>
+                        <option value="0">07:00</option>
+                        <option value="1">08:00</option>
+                        <option value="2">09:00</option>
+                        <option value="3">10:00</option>
+                        <option value="4">11:00</option>
+                        <option value="5">12:00</option>
+                        <option value="6">13:00</option>
+                        <option value="7">14:00</option>
+                        <option value="8">15:00</option>
+                        <option value="9">16:00</option>
+                        <option value="10">17:00</option>
+                        <option value="11">18:00</option>
+                        <option value="12">19:00</option>
+                        <option value="13">20:00</option>
             </select>
                 </div>
                 <div class="col-sm-1">
-                    <select class="form-control"title="12:00" ng-model="inputGioKetThuc" id="inputGioKetThuc">
-                        <option>07:00</option>
-                        <option>08:00</option>
-                        <option>09:00</option>
-                        <option>10:00</option>
-                        <option>11:00</option>
-                        <option>12:00</option>
-                        <option>13:00</option>
-                        <option>14:00</option>
-                        <option>15:00</option>
-                        <option>16:00</option>
-                        <option>17:00</option>
-                        <option>18:00</option>
-                        <option>19:00</option>
-                        <option>20:00</option>
+                    <select class="form-control"title="12:00" ng-model="inputGioKetThuc" id="inputGioKetThuc" ng-required="true">
+                        <option value=""></option>
+                        <option value="0">07:00</option>
+                        <option value="1">08:00</option>
+                        <option value="2">09:00</option>
+                        <option value="3">10:00</option>
+                        <option value="4">11:00</option>
+                        <option value="5">12:00</option>
+                        <option value="6">13:00</option>
+                        <option value="7">14:00</option>
+                        <option value="8">15:00</option>
+                        <option value="9">16:00</option>
+                        <option value="10">17:00</option>
+                        <option value="11">18:00</option>
+                        <option value="12">19:00</option>
+                        <option value="13">20:00</option>
             </select>
                 </div>
                 <div class="col-sm-1" style="text-align: right;">
-                    <label for="inputRoom" class="control-label">Phòng</label>
+                    <label for="inputRoom" class="control-label">Phòng (<b style="color:red;">*</b>)</label>
                 </div>
                 <div class="col-sm-3" >
-                    <select class="form-control"  ng-model="inputPhong" id="inputPhong" title="Chọn phòng họp">
+                    <select class="form-control"  ng-model="inputPhong" id="inputPhong" title="Chọn phòng họp" ng-required="true">
+                        <option value="">Chọn phòng họp</option>
                         <option>101</option>
                         <option>102</option>
                         <option>103</option>
@@ -100,41 +91,43 @@
 
             <div class="form-group">
                 <div class="col-sm-1" style="text-align: right;">
-                    <label for="inputContend" class="control-label">Chủ đề</label>
+                    <label for="inputContend" class="control-label">Chủ đề (<b style="color:red;">*</b>)</label>
                 </div>
                 <div class="col-sm-10">
-                    <select class="form-control"  ng-model="inputContend" id="inputContend"  title="Chọn chủ đề">
-                        <option>Họp triển khai công việc</option>
-                        <option>Họp giải quyết vấn đề</option>
-                        <option>Họp lấy ý kiến, phiếu bầu</option>
-                        <option>Họp triển khai công việc</option>
-                        <option>Họp trao đổi thông tin</option>
-                        <option>Họp mở rộng dân chủ</option>
+                    <select class="form-control"  ng-model="inputContend" id="inputContend"  title="Chọn chủ đề" ng-required="true">
+                        <option value="">Chọn chủ đề họp</option>
+                        <option value="Họp triển khai công việc">Họp triển khai công việc</option>
+                        <option value="Họp giải quyết vấn đề">Họp giải quyết vấn đề</option>
+                        <option value="Họp lấy ý kiến, phiếu bầu">Họp lấy ý kiến, phiếu bầu</option>
+                        <option value="Họp triển khai công việc">Họp triển khai công việc</option>
+                        <option value="Họp trao đổi thông tin">Họp trao đổi thông tin</option>
+                        <option value="Họp mở rộng dân chủ">Họp mở rộng dân chủ</option>
             </select>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-sm-1" style="text-align: right;">
-                    <label for="inputBoss" class="control-label">Chủ trì</label>
+                    <label for="inputBoss" class="control-label">Chủ trì (<b style="color:red;">*</b>)</label>
                 </div>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" ng-model="inputBoss" id="inputBoss" placeholder="Chủ trì">
+                    <input type="text" class="form-control" ng-model="inputBoss" id="inputBoss" placeholder="Nhập tên chủ trì (ông/bà)" ng-required="true">
                 </div>
                 <div class="col-sm-2" style="text-align: right;">
                     <label for="inputThuKy" class="control-label">Thư ký</label>
                 </div>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" ng-model="inputThuKy" id="inputThuKy" placeholder="Thư ký">
+                    <input type="text" class="form-control" ng-model="inputThuKy" id="inputThuKy" placeholder="Nhập tên thư ký (ông/bà)" ng-required="true">
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-sm-1" style="text-align: right;">
-                    <label for="inputDonVi" class="control-label">Đơn vị</label>
+                    <label for="inputDonVi" class="control-label">Đơn vị (<b style="color:red;">*</b>)</label>
                 </div>
                 <div class="col-sm-4">
-                    <select class="form-control"  title="Chọn đơn vị" ng-model="inputDonVi" id="inputDonVi">
+                    <select class="form-control"  title="Chọn đơn vị" ng-model="inputDonVi" id="inputDonVi" ng-required="true">
+                        <option value="">Chọn đơn vị</option>
                         <option>VietInfo Corp</option>
                         <option>Creatory</option>
                         <option>VinGroup</option>
@@ -145,7 +138,8 @@
                     <label for="inputPhongBan" class="control-label">Phòng ban</label>
                 </div>
                 <div class="col-sm-4">
-                    <select class="form-control" title="Chọn phòng ban" ng-model="inputPhongBan" id="inputPhongBan">
+                    <select class="form-control" title="Chọn phòng ban" ng-model="inputPhongBan" id="inputPhongBan" ng-required="true">
+                        <option value="">Chọn phòng ban</option>
                         <option>Chủ tịch</option>
                         <option>Giám Đốc</option>
                         <option>Phòng nhân sự</option>
@@ -155,25 +149,25 @@
             </div>
 
             <div class="form-group">
-                <div class="col-sm-1" style="text-align: right;">
+                <div class="col-sm-1"   style="text-align: right;">
                     <label for="inputAddress" class="control-label">Địa chỉ</label>
                 </div>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" ng-model="inputAddress" id="inputAddress" placeholder="Địa chỉ">
+                    <input type="text" class="form-control" ng-model="inputAddress" id="inputAddress" placeholder="Địa chỉ" ng-required="true">
                 </div>
                 <div class="col-sm-2" style="text-align: right;">
-                    <label for="radioOptions" class="control-label">Tình trạng:</label>
+                    <label for="radioOptions" class="control-label">Tình trạng (<b style="color:red;">*</b>)</label>
                 </div>
                 <div class="col-xs-1" style="text-align: left !important;">
-                    <label class="radio-inline custom-radio nowrap">
-                      <input type="radio" name="checkBatBuoc" id="checkBatBuoc" value="option1" >
-                      <span>Bắt buộc</span>
-                    </label>
+                        <label class="radio-inline custom-radio nowrap">
+                            <input type="radio" name="inlineRadioOptions" ng-model="typeOfAction.name" ng-disabled="typeOfAction.disabled" value="DELETE">
+                            <span>Bắt buộc</span>
+                        </label>
                   </div>
                   <div class="col-sm-1" style="text-align: left !important;">
                     <label class="radio-inline custom-radio nowrap">
-                      <input type="radio" name="checkKoBatBuoc" id="checkKoBatBuoc" value="option2" >
-                      <span>Không bắt buộc</span>
+                        <input type="radio" name="inlineRadioOptions" checked="checked" ng-model="typeOfAction.name" ng-disabled="typeOfAction.disabled" value="ADJUST">
+                        <span>Không bắt buộc</span>
                     </label>
                   </div>
             </div>
@@ -182,9 +176,10 @@
                 <div class="col-sm-1" style="text-align: right;" >
                     <label for="inputUpload" class="control-label">TL đính kèm</label>
                 </div>
-                <div class="col-sm-10" style="text-align: right;">
-                
-                <input type="file" class="form-control" [(ngModel)]="model.fileupload" id="inputUpload" >
+                <div class="col-sm-10" style="text-align: right;" ng-controller="myPageCtrl">
+                        <!-- file name : {{myFile.}}<br> -->
+                        <input type="file" file-model="myFile"/>
+                        <!-- <button ng-click="uploadFile()">upload me</button> -->
             </div> 
             </div>
 
@@ -200,7 +195,7 @@
 
             <!--Form's button-->
             <div style="text-align: center !important;">
-                <button type="button" ng-click="Save()" class="btn btn-success btn-with-icon save-profile">
+                <button type="submit" ng-click="Save()" class="btn btn-success btn-with-icon save-profile">
                     <i class="ion-android-checkmark-circle"></i>Lưu
                 </button>
                 <button type="button" ng-disabled="IsDisabled" class="btn btn-danger btn-with-icon save-profile" ng-click="backPage()">
@@ -231,3 +226,4 @@ margin-left: 0%;
 margin-right: 100%
     }    
   </style>
+  
